@@ -16,14 +16,9 @@ export function loadLocale(locale) {
   return new Promise(resolve => {
     switch (locale) {
       case 'it':
-        return require(
-          ['locales/it', 'react-intl/locale-data/it'],
-          addLocaleDataAndResolve(locale, resolve)
-        );
-      case 'en':
       default:
         return require(
-          ['locales/en', 'react-intl/locale-data/en'],
+          ['locales/it', 'react-intl/locale-data/it'],
           addLocaleDataAndResolve(locale, resolve)
         );
     }

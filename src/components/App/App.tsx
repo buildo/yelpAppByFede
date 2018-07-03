@@ -11,27 +11,17 @@ In this simple example it does a bit of both.
 */
 
 import * as React from 'react';
-import View from 'View';
-import SwitchViewDropdown from 'SwitchViewDropdown';
-import Hello from 'Hello';
-import { declareQueries } from '@buildo/bento/data';
-import { currentView } from 'queries';
 
 import './app.scss';
 
-const queries = declareQueries({ currentView });
-
-class App extends React.Component<typeof queries.Props> {
+class App extends React.Component<never> {
   render() {
-    const { currentView } = this.props;
     return (
-      <View column className='app'>
+      <div className='app'>
         <h1>Bento App</h1>
-        <SwitchViewDropdown />
-        {currentView.ready && currentView.value === 'hello' && <Hello />}
-      </View>
+      </div>
     );
   }
 }
 
-export default queries(App);
+export default App;
