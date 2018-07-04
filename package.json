@@ -7,12 +7,13 @@
     "lint": "bento lint",
     "lint-fix": "bento lint --fix",
     "lint-style": "bento lint-style",
-    "pretty": "prettier --write \"**/*.js\""
+    "pretty": "prettier --write \"**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@buildo/bento": "^5.0.0",
     "classnames": "^2.2.5",
     "es6-promise": "^4.2.2",
+    "eslint-config-prettier": "^2.9.0",
     "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"

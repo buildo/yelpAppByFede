@@ -11,15 +11,21 @@ In this simple example it does a bit of both.
 */
 
 import * as React from 'react';
+import View from 'View';
 
 import './app.scss';
 
 class App extends React.Component {
   render() {
     return (
-      <div className='app'>
+      <View
+        className="app"
+        column
+        hAlignContent="center"
+        vAlignContent="center"
+      >
         <h1>Bento App</h1>
-      </div>
+      </View>
     );
   }
 }
