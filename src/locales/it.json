@@ -3,7 +3,7 @@
     "it"
   ],
   "messages": {
-    "Hello.hello": "Ciao {name}!",
-    "Hello.warningLength": "la lunghezza del nome deve essere compresa tra 6 e 50"
+    "App.title": "Welcome to the YelpFeast",
+    "App.subtitle": "the only app that fully satisfies your gluttony needs"
   }
 }

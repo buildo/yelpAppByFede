@@ -19,8 +19,12 @@ CONFIG_API_ENDPOINT=/myDevApi yarn run build
 
 const t = require('tcomb');
 
-module.exports = t.interface({
-  port: t.maybe(t.Integer),
-  bundle: t.interface({
-  })
-}, { name: 'Config', strict: true });
+module.exports = t.interface(
+  {
+    port: t.maybe(t.Integer),
+    bundle: t.interface({
+      apiEndpoint: t.String,
+    }),
+  },
+  { name: 'Config', strict: true },
+);
