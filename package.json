@@ -6,7 +6,8 @@
     "build": "NODE_ENV=production bento web-build-ts -c ./config",
     "lint": "bento lint",
     "lint-fix": "bento lint --fix",
-    "lint-style": "bento lint-style"
+    "lint-style": "bento lint-style",
+    "pretty": "prettier --write \"**/*.js\""
   },
   "dependencies": {
     "@buildo/bento": "^5.0.0",

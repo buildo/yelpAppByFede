@@ -20,9 +20,10 @@ require('./addDeviceClassName');
 require('theme');
 
 export function main(mountNode) {
-  ReactDOM.render((
-    <IntlProvider loadLocale={loadLocale} locale='it'>
+  ReactDOM.render(
+    <IntlProvider loadLocale={loadLocale} locale="it">
       <App />
-    </IntlProvider>
-  ), mountNode);
+    </IntlProvider>,
+    mountNode,
+  );
 }

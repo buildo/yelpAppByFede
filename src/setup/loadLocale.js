@@ -17,10 +17,10 @@ export function loadLocale(locale) {
     switch (locale) {
       case 'it':
       default:
-        return require(
-          ['locales/it', 'react-intl/locale-data/it'],
-          addLocaleDataAndResolve(locale, resolve)
-        );
+        return require([
+          'locales/it',
+          'react-intl/locale-data/it',
+        ], addLocaleDataAndResolve(locale, resolve));
     }
   });
 }

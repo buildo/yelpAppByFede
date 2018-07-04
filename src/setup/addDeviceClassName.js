@@ -8,10 +8,10 @@ const md = mobileDetect();
 const deviceClassName = cx({
   'is-desktop': md.isDesktop,
   'is-tablet': md.isTablet,
-  'is-phone': md.isPhone
+  'is-phone': md.isPhone,
 });
 
 // document.documentElement is not supported in every browser, fallback on document.body
-const body = (document.documentElement || document.body);
+const body = document.documentElement || document.body;
 
 body.className = cx(body.className, deviceClassName);
