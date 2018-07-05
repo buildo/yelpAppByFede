@@ -12,6 +12,7 @@ In this simple example it does a bit of both.
 
 import * as React from 'react';
 import View from 'View';
+import Form from 'Form';
 
 import './app.scss';
 
@@ -24,7 +25,7 @@ class App extends React.Component {
         hAlignContent="center"
         vAlignContent="center"
       >
-        <h1>Bento App</h1>
+        <Form />
       </View>
     );
   }

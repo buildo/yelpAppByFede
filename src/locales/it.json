@@ -1,9 +1,9 @@
 {
-  "locales": [
-    "it"
-  ],
+  "locales": ["it"],
   "messages": {
     "App.title": "Welcome to the YelpFeast",
-    "App.subtitle": "the only app that fully satisfies your gluttony needs"
+    "App.subtitle": "the only app that fully satisfies your gluttony needs",
+    "App.place.placeholder": "where do you want to eat?",
+    "App.distance.placeholder": "how far are you willing to walk?"
   }
 }
