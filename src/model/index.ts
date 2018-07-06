@@ -18,6 +18,6 @@ const foo: Foo = { bar: 5 }
 
 export type FormFields = 'place' | 'distance';
 
-export type FormPlaceHolders = { [key in FormFields]: string };
+export type FormPlaceholders = { [key in FormFields]: string };
 
 export default undefined;

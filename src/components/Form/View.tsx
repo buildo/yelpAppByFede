@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormFields, FormPlaceHolders } from 'model';
+import { FormFields, FormPlaceholders } from 'model';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import Input from '@buildo/bento/components/Input';
 import View from 'View';
@@ -7,20 +7,17 @@ import View from 'View';
 import './form.scss';
 import '@buildo/bento/components/Input.scss';
 
-type AppState = { [key in FormFields]: string };
+type State = { [key in FormFields]: string };
 
-type AppProps = {};
+type Props = {} & ReactIntl.InjectedIntlProps;
 
-const Placeholders: FormPlaceHolders = {
+const Placeholders: FormPlaceholders = {
   place: 'App.place.placeholder',
   distance: 'App.distance.placeholder',
 };
 
-class Form extends React.PureComponent<
-  AppProps & ReactIntl.InjectedIntlProps,
-  AppState
-> {
-  state: AppState = {
+class Form extends React.PureComponent<Props, State> {
+  state: State = {
     place: '',
     distance: '',
   };
@@ -28,7 +25,7 @@ class Form extends React.PureComponent<
   onChange = (inputName: FormFields): ((value: string) => void) => value =>
     this.setState({
       [inputName]: value,
-    } as AppState);
+    } as State);
 
   render() {
     const {
@@ -62,4 +59,4 @@ class Form extends React.PureComponent<
   }
 }
 
-export default injectIntl<AppProps>(Form);
+export default injectIntl<{}>(Form);
