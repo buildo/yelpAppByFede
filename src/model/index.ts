@@ -1,23 +1,24 @@
-/*
+import * as t from 'io-ts';
 
-You may write here any type that you want to re-use in you application.
+export type FetchFields = { placeToFetch: string; distanceToFetch: string };
 
-ex:
+export type FormFields = { place: string; distance: string };
 
-export type Foo = {
-  bar: number
-}
+export type FormPlaceholders = { [key in keyof FormFields]: string };
 
-and in any file:
+export const IORestaurantType = t.interface({
+  id: t.string,
+  display_phone: t.string,
+  name: t.string,
+  image_url: t.string,
+  rating: t.number,
+  phone: t.string,
+  price: t.string,
+  url: t.string,
+});
 
-import { Foo } from 'model'
-
-const foo: Foo = { bar: 5 }
-
-*/
-
-export type FormFields = 'place' | 'distance';
-
-export type FormPlaceholders = { [key in FormFields]: string };
+export const IORestaurantsType = t.interface({
+  businesses: t.array(IORestaurantType),
+});
 
 export default undefined;
