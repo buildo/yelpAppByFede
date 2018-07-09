@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { FetchFields, FormFields, FormPlaceholders } from 'model';
 import { injectIntl } from 'react-intl';
-import * as _ from 'lodash';
-import Input from '@buildo/bento/components/Input';
+import debounce from 'lodash-es/debounce';
+import Input from 'Input';
 import Results from 'Results';
 
 import './form.scss';
-import '@buildo/bento/components/Input.scss';
+
+export type FetchFields = { placeToFetch: string; distanceToFetch: string };
+
+export type FormFields = { place: string; distance: string };
+
+export type FormPlaceholders = { [key in keyof FormFields]: string };
 
 type State = { [key in keyof FormFields]: string } &
   { [key in keyof FetchFields]: string };
@@ -27,7 +31,10 @@ class Form extends React.PureComponent<Props, State> {
   };
 
   changeResultsToFetch = (inputName: keyof FetchFields) =>
-    _.debounce(value => this.setState({ [inputName]: value } as State), 500);
+    debounce(
+      (value: string) => this.setState({ [inputName]: value } as State),
+      500,
+    );
 
   changeDistanceToFetch = this.changeResultsToFetch('distanceToFetch');
 
@@ -40,9 +47,10 @@ class Form extends React.PureComponent<Props, State> {
       [inputName]: value,
     } as any) as State);
 
-  onChangeDistance = (value: string) =>
-    this.changeFieldValue('distance')(value) ||
+  onChangeDistance = (value: string) => {
+    this.changeFieldValue('distance')(value);
     this.changeDistanceToFetch(value);
+  };
 
   onChangePlace = (value: string) =>
     this.changeFieldValue('place')(value) || this.changePlaceToFetch(value);

@@ -1,11 +1,5 @@
 import * as t from 'io-ts';
 
-export type FetchFields = { placeToFetch: string; distanceToFetch: string };
-
-export type FormFields = { place: string; distance: string };
-
-export type FormPlaceholders = { [key in keyof FormFields]: string };
-
 export const IORestaurantType = t.interface({
   id: t.string,
   display_phone: t.string,
@@ -16,6 +10,8 @@ export const IORestaurantType = t.interface({
   price: t.string,
   url: t.string,
 });
+
+export type IRestaurant = t.TypeOf<typeof IORestaurantType>;
 
 export const IORestaurantsType = t.interface({
   businesses: t.array(IORestaurantType),

@@ -1,11 +1,8 @@
-import * as t from 'io-ts';
 import * as React from 'react';
-import { IORestaurantType } from 'model';
+import { IRestaurant } from 'model';
 import View from 'View';
 
 import './business.scss';
-
-type IRestaurant = t.TypeOf<typeof IORestaurantType>;
 
 const Business: React.SFC<IRestaurant> = ({
   display_phone,
