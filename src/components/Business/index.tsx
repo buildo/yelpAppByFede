@@ -13,7 +13,7 @@ const Business: React.SFC<IRestaurant> = ({
   price,
   url,
 }) => (
-  <View column className="business">
+  <View column className="business" shrink={0}>
     <div className="name">{name}</div>
 
     <View>
@@ -21,7 +21,7 @@ const Business: React.SFC<IRestaurant> = ({
         <img src={image_url} />
       </a>
 
-      <View className="internal_wrapper">
+      <View column grow={1} hAlignContent="center" vAlignContent="center">
         <a className="phone" href={`tel:${phone}`}>
           {display_phone}
         </a>
