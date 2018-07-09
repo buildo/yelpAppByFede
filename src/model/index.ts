@@ -14,10 +14,10 @@ import { Foo } from 'model'
 
 const foo: Foo = { bar: 5 }
 
-
-
-Here we define a type `CurrentView` and two helper functions that are used
-in the example app created by default:
-
 */
+
+export type FormFields = 'place' | 'distance';
+
+export type FormPlaceholders = { [key in FormFields]: string };
+
 export default undefined;

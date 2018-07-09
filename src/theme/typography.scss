@@ -2,9 +2,22 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 html {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto';
   font-size: 14px;
   font-weight: $regular;
   color: $black;
-  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  font-family: 'SourceSansPro';
+  font-size: 40px;
+  font-weight: $semibold;
+  color: $darkGrey;
+}
+
+.lead {
+  font-size: 24px;
+  font-weight: $bold;
+  letter-spacing: 0.2px;
+  color: $ui3;
 }
