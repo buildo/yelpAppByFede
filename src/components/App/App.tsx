@@ -11,6 +11,7 @@ In this simple example it does a bit of both.
 */
 
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import View from 'View';
 import Form from 'Form';
 
@@ -19,12 +20,15 @@ import './app.scss';
 class App extends React.Component {
   render() {
     return (
-      <View
-        className="app"
-        column
-        hAlignContent="center"
-        vAlignContent="center"
-      >
+      <View className="app" column basis="100%" hAlignContent="center">
+        <View className="title" shrink={0} hAlignContent="center">
+          <FormattedMessage id="App.title" />
+        </View>
+
+        <View className="lead" shrink={0} hAlignContent="center">
+          <FormattedMessage id="App.subtitle" />
+        </View>
+
         <Form />
       </View>
     );
